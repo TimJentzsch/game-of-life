@@ -8,8 +8,9 @@ const BOARD_ELEMENT_ID = "board";
 let board;
 const size = { rows: 0, columns: 0 };
 
-function init(rows, columns) {
-  board = initBoard(rows, columns);
+// eslint-disable-next-line no-unused-vars
+function start() {
+  board = initBoard(40, 40);
   render(board);
 
   setInterval(() => {
@@ -186,3 +187,8 @@ function render(board) {
   boardDiv.innerHTML = "";
   boardDiv.appendChild(table);
 }
+
+// Start the simulation when the browser finished loading
+document.addEventListener("DOMContentLoaded", () => {
+  start();
+});
