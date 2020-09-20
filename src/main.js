@@ -92,7 +92,9 @@ function getNeighbors(row, column) {
 
     for (let i = row-1; i <= row+1; i++) {
         for (let j = column-1; j <= column+1; j++) {
-            neighbors.push(getCell(i, j));
+            if (i !== row || j !== column) {
+                neighbors.push(getCell(i, j));
+            }
         }
     }
 
